@@ -1,4 +1,5 @@
-import {Hero,Navbar, Footer } from "./components"
+import { Route, Routes } from "react-router-dom"
+import {Hero,Navbar, Footer, Career, About } from "./components"
 
 
 
@@ -9,7 +10,12 @@ const App = () => {
 <Navbar/>
 
 <main>
-  <Hero/>
+
+  <Routes>
+<Route to='/' element={<Hero/>} />
+<Route to='/about' element={<About/>} />
+<Route to='/career' element={<Career/>} />
+  </Routes>
 </main>
 
 <Footer/>

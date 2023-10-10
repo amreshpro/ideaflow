@@ -1,3 +1,4 @@
+import { About } from "./About";
 import { ApplyCard } from "./ApplyCard";
 import { Career } from "./Career";
 import { Footer } from "./Footer";
@@ -20,6 +21,7 @@ export {
   Footer,
   ApplyCard,
   Career,
+  About,
   Hero,
   Hero2,
   Hero3,
