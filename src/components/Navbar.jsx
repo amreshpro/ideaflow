@@ -3,25 +3,39 @@ import { Link, NavLink } from "react-router-dom";
 import { RiMenu3Fill } from "react-icons/ri";
 import { AiOutlineClose } from "react-icons/ai";
 import { BsFillMoonStarsFill,BsFillSunFill } from "react-icons/bs";
-import { DarkColor,LightColor } from "../theme";
+import { DarkColor,DarkMobileMenu,LightColor, LightMobileMenu } from "../theme";
+import { useDispatch, useSelector } from "react-redux";
+import { darkModeToggler } from "../store/darkModeSlice";
 
 
 
 
 export const Navbar = () => {
-  const [isMobileMenuOpen, setisMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-const [isDarkModeEnable, setIsDarkModeEnable] = useState(false)
+// const [isDarkModeEnable, setIsDarkModeEnable] = useState(false)
+
+// dark mode value
+const isDarkModeEnable = useSelector((state)=>state.darkMode);
+
+const disapatch = useDispatch();
+
+// dark mode handler
+const darkModeToggleHandler=()=>{
+
+  disapatch(darkModeToggler());
+}
+
 
   return (
-    <div className={`${isDarkModeEnable ? DarkColor : LightColor} py-4 flex justify-between px-4 sm:px-2 `}>
+    <nav className={`${isDarkModeEnable ? DarkColor : LightColor} py-4 flex justify-between px-4 sm:px-2 shadow-lg`}>
       <div className="logo flex gap-2">
-        <h1>IdeaFlow</h1>
-        <button className="hidden sm:flex ml-2 text-xl" onClick={()=>setIsDarkModeEnable(!isDarkModeEnable)} >{ isDarkModeEnable? <BsFillSunFill/>: <BsFillMoonStarsFill/>}</button>
+        <h1 className="font-sans font-extralight">IdeaFlow</h1>
+        <button className="hidden sm:flex ml-2 text-xl" onClick={darkModeToggleHandler} >{ isDarkModeEnable? <BsFillSunFill/>: <BsFillMoonStarsFill/>}</button>
 
       </div>
       <div className="link flex gap-3 sm:hidden ">
-        <button className="mr-2 text-xl" onClick={()=>setIsDarkModeEnable(!isDarkModeEnable)} >{ isDarkModeEnable? <BsFillSunFill/>: <BsFillMoonStarsFill/>}</button>
+        <button className="mr-2 text-xl" onClick={darkModeToggleHandler} >{ isDarkModeEnable? <BsFillSunFill/>: <BsFillMoonStarsFill/>}</button>
         <NavLink
           to="/"
           className={({ isActive }) => {
@@ -60,7 +74,7 @@ const [isDarkModeEnable, setIsDarkModeEnable] = useState(false)
       {/* mobile menu button */}
       <button
         className="hidden sm:flex"
-        onClick={() => setisMobileMenuOpen(!isMobileMenuOpen)}
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
       >
         {isMobileMenuOpen ? (
           <AiOutlineClose className="text-2xl" />
@@ -72,7 +86,7 @@ const [isDarkModeEnable, setIsDarkModeEnable] = useState(false)
       {/* mobile nav */}
 
       {isMobileMenuOpen && (
-        <div className={`mobile-nav ${isDarkModeEnable ? DarkColor : LightColor}  absolute  top-16 right-1  bg-slate-700 py-4 px-4 m-1 rounded-lg `}>
+        <div className={`mobile-nav ${isDarkModeEnable ? DarkMobileMenu : LightMobileMenu}   absolute  top-16 right-1   py-4 px-4 rounded-lg `}>
           <div className="mobile-nav-links flex flex-col justify-center px-4 py-4 gap-4  ">
             <Link
               to="/"
@@ -101,6 +115,6 @@ const [isDarkModeEnable, setIsDarkModeEnable] = useState(false)
           </div>
         </div>
       )}
-    </div>
+    </nav>
   );
 };
