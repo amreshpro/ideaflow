@@ -62,7 +62,7 @@ const darkModeToggleHandler=()=>{
           Career
         </NavLink>
         <NavLink
-          to="/contact"
+          to="mailto:pleasecontact@ideaflow.io"
           className={({ isActive }) => {
             return isActive ? " underline underline-offset-4 " : "";
           }}
@@ -107,7 +107,7 @@ const darkModeToggleHandler=()=>{
               Career
             </Link>
             <Link
-              to="/contact"
+              to="mailto:pleasecontact@ideaflow.io"
               className="hover:bg-gray-200 hover:text-gray-700 w-fit px-2 py-2"
             >
               Contact

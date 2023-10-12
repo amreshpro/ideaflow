@@ -1,10 +1,16 @@
+import { WhoWeAre } from "./WhoWeAre"
 
 
 
 
 
 export const About = () => {
+
   return (
-    <div>About</div>
+    <div>
+
+<WhoWeAre/>
+
+    </div>
   )
 }

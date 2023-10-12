@@ -137,3 +137,39 @@ export const advisors = [
 
 
 ]
+
+
+
+export const leaderships =[
+{
+    id:"leader_1",
+    name:"Jacob Cole",
+    profile:"CEO",
+    url:"https://uploads-ssl.webflow.com/5ef95ae22a251e0c9030800e/600e1c5da2ae0d04a3bcc354_Jacob%20v2.png",
+    past:"Past: MIT Media Lab; researcher with Tim Berners-Lee. Venture Partner at Outliers Fund."
+},
+{
+    id:"leader_2",
+    name:"David Greenspan",
+    profile:"Head of Product",
+    url:"https://uploads-ssl.webflow.com/5ef95ae22a251e0c9030800e/5efac09c6835e22147e6286f_Avatar-%20DG.png",
+    past:"Past: Co-Founder of AppJet, created Etherpad (acquired by Google); YC W07. 1st Engineer at Meteor."
+}
+,
+{
+    id:"leader_3",
+    name:"Bat Manson",
+    profile:"Head of Engineering",
+    url:"https://uploads-ssl.webflow.com/5ef95ae22a251e0c9030800e/5f07f06964242a43c2e9de66_Avatar-%20BM.png",
+    past:"Past: Serial Entrepreneur. Engineering Manager at Apple. Director of Engineering at Shone; YC W18."
+}
+,{
+    id:"leader_4",
+    name:"Albert Stawinski",
+    profile:"Full Stack Engineer",
+    url:"https://uploads-ssl.webflow.com/5ef95ae22a251e0c9030800e/61d8de932703b42b586624d9_Albert.png",
+    past:"Past: Software Engineer at Palantir. Oxford Alum."
+}
+
+
+]
